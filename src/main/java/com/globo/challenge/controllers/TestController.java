@@ -21,7 +21,7 @@ public class TestController {
 
         HashMap<String, String>  response = new HashMap<>();
 
-        response.put("prop", "Caio");
+        response.put("prop", "YY");
 
         return response;
     }
