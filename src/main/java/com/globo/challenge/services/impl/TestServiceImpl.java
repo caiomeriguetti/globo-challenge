@@ -4,9 +4,9 @@ import com.globo.challenge.models.Test;
 import com.globo.challenge.repository.TestRepository;
 import com.globo.challenge.services.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class TestServiceImpl implements TestService {
 
     @Autowired

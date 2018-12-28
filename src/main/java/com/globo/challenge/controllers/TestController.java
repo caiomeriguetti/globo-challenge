@@ -22,7 +22,7 @@ public class TestController {
     public Map hello() {
 
         testService.testMethod();
-        
+
         HashMap<String, String>  response = new HashMap<>();
 
         response.put("prop", "Caio");
