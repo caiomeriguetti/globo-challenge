@@ -1,7 +1,7 @@
 package com.globo.challenge.services;
 
 import com.globo.challenge.models.AppUser;
-import com.globo.challenge.repository.UserRepository;
+import com.globo.challenge.repository.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -17,12 +17,12 @@ import java.util.List;
 public class UserAuthService implements UserDetailsService {
 
     @Autowired
-    UserRepository userRepository;
+    AppUserRepository appUserRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        AppUser appUser = userRepository.findByUsername(username);
+        AppUser appUser = appUserRepository.findByUsername(username);
 
         if (appUser == null) {
             throw new UsernameNotFoundException("Not Found");
