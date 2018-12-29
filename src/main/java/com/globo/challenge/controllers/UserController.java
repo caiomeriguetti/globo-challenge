@@ -19,8 +19,6 @@ public class UserController {
 
         AppUser usr = appUserService.getUserByUsername(username);
 
-        System.out.println(usr);
-
         return usr;
     }
 }
