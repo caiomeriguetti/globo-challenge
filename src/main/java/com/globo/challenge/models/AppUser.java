@@ -1,15 +1,10 @@
 package com.globo.challenge.models;
 import com.globo.challenge.repository.AppUserInMemRepository;
 import com.globo.challenge.services.BeanUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
