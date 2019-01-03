@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/src
     ports:
-      - 8080:8080
+      - 8443:8443
 
   db:
     image: mongo
