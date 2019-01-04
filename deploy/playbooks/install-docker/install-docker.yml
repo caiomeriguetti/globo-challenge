@@ -29,8 +29,8 @@
 
     - name: enable docker
       remote_user: centos
-      become: yes
       become_method: sudo
+      become: yes
       command: systemctl enable docker
 
     - name: start docker
