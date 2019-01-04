@@ -1,0 +1,40 @@
+- hosts: ["3.80.194.232"]
+  remote_user: centos
+  tasks:
+    - name: create dir
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: mkdir -p /root/globo-challenge/install-docker
+
+    - name: copy-docker-install-files
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      copy:
+        src: install-docker.sh
+        dest: /root/globo-challenge/install-docker/install-docker
+
+    - name: make executable install docker
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: "chmod +x /root/globo-challenge/install-docker/install-docker"
+
+    - name: install docker
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: "chdir=/root/globo-challenge/install-docker /bin/bash install-docker"
+
+    - name: enable docker
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: systemctl enable docker
+
+    - name: start docker
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: systemctl start docker
