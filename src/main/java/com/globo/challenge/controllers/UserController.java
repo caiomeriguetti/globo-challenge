@@ -21,7 +21,7 @@ public class UserController {
     AppUserRepository repo;
 
     @RequestMapping("/api/user/{username}")
-    public AppUser getUserById(@PathVariable("username") String username) {
+    public AppUser getUserByUsername(@PathVariable("username") String username) {
 
         AppUser usr = appUserService.getUserByUsername(username);
         System.out.println(usr.getStatus());
