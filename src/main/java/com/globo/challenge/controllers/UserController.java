@@ -27,14 +27,4 @@ public class UserController {
         System.out.println(usr.getStatus());
         return usr;
     }
-
-    @RequestMapping("/public/test")
-    public AppUser test() {
-
-        AppUser usr = repo.findById("5c298b3e08813b0001fb4e0b").get();
-
-        System.out.println(usr);
-
-        return usr;
-    }
 }
