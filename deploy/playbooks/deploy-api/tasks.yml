@@ -16,4 +16,4 @@
   remote_user: centos
   become: yes
   become_method: sudo
-  command: bash -c 'cd /root/api-run && docker-compose up -d --force-recreate'
+  command: bash -c 'cd /root/api-run && docker-compose pull && docker-compose up -d --force-recreate'

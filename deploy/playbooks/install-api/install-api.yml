@@ -6,5 +6,5 @@
     - include: ../install-docker-compose/tasks.yml
     - include: ../install-aws-cli/tasks.yml
     - include: ../install-aws-credentials/tasks.yml
-    - include: tasks.yml
+    - include: ../deploy-api/tasks.yml
 
