@@ -1,0 +1,13 @@
+- name: copy redis run configs
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  copy:
+    src: mongo-run
+    dest: /root
+
+- name: run mongodb
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: bash -c 'cd /root/mongo-run && docker-compose up -d --force-recreate'

@@ -1,0 +1,7 @@
+- name: install aws credentials
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  copy:
+    src: .aws
+    dest: /root/

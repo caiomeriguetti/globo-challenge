@@ -1,0 +1,13 @@
+- name: copy redis run configs
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  copy:
+    src: redis-run
+    dest: /root
+
+- name: run redis
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: bash -c 'cd /root/redis-run && docker-compose up -d --force-recreate'

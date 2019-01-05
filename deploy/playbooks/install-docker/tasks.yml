@@ -1,0 +1,29 @@
+- name: get docker install script
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: curl https://get.docker.com -o getdocker
+
+- name: getdocker executable
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: chmod +x getdocker
+
+- name: install docker
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: ./getdocker
+
+- name: enable docker
+  remote_user: centos
+  become_method: sudo
+  become: yes
+  command: systemctl enable docker
+
+- name: start docker
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: systemctl start docker

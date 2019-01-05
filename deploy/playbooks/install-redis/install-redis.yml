@@ -1,0 +1,12 @@
+- hosts: all
+  remote_user: centos
+  gather_facts: no
+  tasks:
+    - include: ../install-docker/tasks.yml
+    - include: ../install-docker-compose/tasks.yml
+    - include: tasks.yml
+
+
+
+
+

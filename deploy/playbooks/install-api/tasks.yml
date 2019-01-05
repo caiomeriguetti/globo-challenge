@@ -1,0 +1,19 @@
+- name: login ecr
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: "bash -c '$(aws ecr get-login --no-include-email --region us-east-1)'"
+
+- name: run api
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  copy:
+    src: api-run
+    dest: /root
+
+- name: run api
+  remote_user: centos
+  become: yes
+  become_method: sudo
+  command: bash -c 'cd /root/api-run && docker-compose up -d --force-recreate'
