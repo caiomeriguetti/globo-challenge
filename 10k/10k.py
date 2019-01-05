@@ -3,13 +3,22 @@ import socket
 import time
 from threading import Thread
 
+import resource as res
+
+res.setrlimit(res.RLIMIT_NOFILE,(30000,30000))
+
 n = 10000
 
 def opensock():
+    print "criou thread"
     s = socket.socket(
     socket.AF_INET, socket.SOCK_STREAM)
 
+    print "connecting"
+
     s.connect(("localhost", 9443))
+
+    print "connected"
 
     while 1:
         time.sleep(1)
@@ -24,7 +33,6 @@ def main():
     for t in threads:
         t.join()
 
-    whi
 
 if __name__ == "__main__":
     main()

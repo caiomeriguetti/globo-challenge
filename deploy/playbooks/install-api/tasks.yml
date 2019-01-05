@@ -4,7 +4,7 @@
   become_method: sudo
   command: "bash -c '$(aws ecr get-login --no-include-email --region us-east-1)'"
 
-- name: run api
+- name: copy run files
   remote_user: centos
   become: yes
   become_method: sudo

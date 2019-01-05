@@ -60,10 +60,6 @@ public class AppUser {
         return username;
     }
 
-    public String setStatus(String s) {
-        return this.status = s;
-    }
-
     public String getStatus() {
 
         Optional<AppUserInMemory> usr = inMemRepository.findById(this.get_id());

@@ -7,4 +7,4 @@ services:
     env_file:
       - .env
     ports:
-      - 443:8443
+      - 9443:8443
