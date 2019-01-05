@@ -1,6 +1,6 @@
 package com.globo.challenge.models;
 import com.globo.challenge.repository.AppUserInMemRepository;
-import com.globo.challenge.services.BeanUtil;
+import com.globo.challenge.services.impl.BeanUtil;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.bson.types.ObjectId;

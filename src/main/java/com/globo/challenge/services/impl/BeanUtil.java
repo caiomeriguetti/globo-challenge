@@ -1,4 +1,4 @@
-package com.globo.challenge.services;
+package com.globo.challenge.services.impl;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

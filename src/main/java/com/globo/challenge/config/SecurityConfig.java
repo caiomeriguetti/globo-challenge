@@ -1,6 +1,6 @@
 package com.globo.challenge.config;
 
-import com.globo.challenge.services.UserAuthService;
+import com.globo.challenge.services.impl.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

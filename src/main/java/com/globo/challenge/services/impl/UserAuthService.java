@@ -1,4 +1,4 @@
-package com.globo.challenge.services;
+package com.globo.challenge.services.impl;
 
 import com.globo.challenge.models.AppUser;
 import com.globo.challenge.repository.AppUserRepository;
