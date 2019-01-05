@@ -1,0 +1,14 @@
+- hosts: ["18.214.36.217"]
+  remote_user: centos
+  tasks:
+    - name: login
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: $(aws ecr get-login --no-include-email --region us-east-1)
+
+    - name: pull
+        remote_user: centos
+        become: yes
+        become_method: sudo
+        command: docker pull 541866003555.dkr.ecr.us-east-1.amazonaws.com/globo-challenge/api:latest

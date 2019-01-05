@@ -9,7 +9,7 @@ yum remove docker \
     docker-logrotate \
     docker-selinux \
     docker-engine-selinux \
-  docker-engine
+    docker-engine
 
 yum install -y yum-utils \
   device-mapper-persistent-data \

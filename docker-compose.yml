@@ -2,6 +2,7 @@ version: '3'
 services:
 
   api:
+    image: 541866003555.dkr.ecr.us-east-1.amazonaws.com/globo-challenge/api:latest
     build:
       context: .
       dockerfile: Dockerfile

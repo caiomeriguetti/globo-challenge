@@ -1,0 +1,29 @@
+- hosts: ["18.214.36.217"]
+  remote_user: centos
+  tasks:
+    - name: download pip
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+    - name: install pip
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: python get-pip.py
+
+    - name: install aws-cli
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: pip install awscli --upgrade --user
+
+    - name: aws executable globally
+      remote_user: centos
+      become: yes
+      become_method: sudo
+      command: ln -fs ~/.local/bin/aws /bin/aws
+
+
+
