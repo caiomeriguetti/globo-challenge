@@ -4,6 +4,7 @@
 - bash
 - Docker
 - Docker compose
+- Ansible
 
 # Local environment
 
