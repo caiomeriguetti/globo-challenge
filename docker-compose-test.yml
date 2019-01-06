@@ -17,6 +17,7 @@ services:
     depends_on:
       - "db-test"
       - "mem-db-test"
+
     command: ["mvn", "clean", "test"]
     build:
       context: .
