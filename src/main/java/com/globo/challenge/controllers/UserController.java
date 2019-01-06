@@ -16,7 +16,6 @@ public class UserController {
     public AppUser getUserByUsername(@PathVariable("username") String username) {
 
         AppUser usr = appUserService.getUserByUsername(username);
-        System.out.println(usr.getStatus());
         return usr;
     }
 
