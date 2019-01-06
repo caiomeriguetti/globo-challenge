@@ -25,6 +25,14 @@ To build api docker image:
 
 ```./up```
 
+### Set status of user in redis
+
+```curl --insecure -XPUT -H "Authorization: Basic Y2FpbzoxMjM0" https://localhost:9443/api/user/caio/status -d "status=XXXX"```
+
+### Get user json
+
+```curl --insecure https://localhost:9443/api/user/caio```
+
 # Deploy
 
 ### Install api on a ssh-able host
