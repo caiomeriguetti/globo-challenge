@@ -25,6 +25,10 @@ To build api docker image:
 
 ```./up```
 
+### run tests
+
+```./test```
+
 ### Set status of user in redis
 
 ```curl --insecure -XPUT -H "Authorization: Basic Y2FpbzoxMjM0" https://localhost:9443/api/user/caio/status -d "status=XXXX"```
