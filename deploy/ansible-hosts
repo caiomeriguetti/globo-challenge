@@ -1,0 +1,8 @@
+[api-servers]
+34.196.85.137
+
+[redis-servers]
+100.24.184.156
+
+[mongo-servers]
+52.21.224.195
