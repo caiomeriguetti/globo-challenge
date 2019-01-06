@@ -26,6 +26,23 @@ To build api docker image:
 
 # Deploy
 
+### Install api on a ssh-able host
+
+after cd into deploy dir:
+
+``` ansible-playbook install-api/install-api.yml --limit api-servers ```
+
+### Install mongo on a ssh-able host
+
+after cd into deploy dir:
+
+``` ansible-playbook install-mongo/install-mongo.yml --limit mongo-servers```
+
+### Install redis on a ssh-able host
+
+after cd into deploy dir:
+
+``` ansible-playbook install-redis/install-redis.yml --limit redis-servers```
 
 
 # 10k connections test
