@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+  db-test:
+    image: mongo
+    ports:
+      - "27017:27017"
+    tmpfs:
+      - /data/db
+
+  mem-db-test:
+    image: redis
+    ports:
+      - "6379:6379"
+
+  tester:
+    depends_on:
+      - "db-test"
+      - "mem-db-test"
+    command: ["mvn", "clean", "test"]
+    build:
+      context: .
+      dockerfile: Dockerfile-builder
+    volumes:
+      - .:/src
+      - ~/.m2:/root/.m2
+    env_file:
+      - .env-test

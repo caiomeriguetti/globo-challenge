@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Optional;
 
@@ -12,11 +13,16 @@ import java.util.Optional;
 public class AppUser {
 
     @Id
+    @Field
     private ObjectId _id;
 
+    @Field
     private String username;
+
+    @Field
     private String password;
 
+    @Transient
     private AppUserInMemRepository inMemRepository;
 
     @Transient

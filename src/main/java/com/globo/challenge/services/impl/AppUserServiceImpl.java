@@ -1,10 +1,10 @@
 package com.globo.challenge.services.impl;
 
+import com.globo.challenge.services.AppUserService;
 import com.globo.challenge.models.AppUser;
 import com.globo.challenge.models.AppUserInMemory;
 import com.globo.challenge.repository.AppUserInMemRepository;
 import com.globo.challenge.repository.AppUserRepository;
-import com.globo.challenge.services.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class AppUserServiceImpl implements AppUserService {
     }
 
     @Override
-    public boolean setUserStatus(String username, String status){
+    public void setUserStatus(String username, String status){
 
         AppUser usr = appUserRepository.findByUsername(username);
 
@@ -36,7 +36,6 @@ public class AppUserServiceImpl implements AppUserService {
 
         appUserInMemoryRepository.save(usrmem);
 
-        return true;
     }
 
 

@@ -13,6 +13,11 @@ public class BeanUtil implements ApplicationContextAware {
         context = applicationContext;
     }
     public static <T> T getBean(Class<T> beanClass) {
+        System.out.println(context);
         return context.getBean(beanClass);
+    }
+
+    public static void setContext(ApplicationContext applicationContext) throws BeansException {
+        context = applicationContext;
     }
 }

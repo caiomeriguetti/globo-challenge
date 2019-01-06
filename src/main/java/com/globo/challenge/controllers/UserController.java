@@ -1,9 +1,7 @@
 package com.globo.challenge.controllers;
 
-import com.globo.challenge.models.AppUser;
-import com.globo.challenge.models.AppUserInMemory;
-import com.globo.challenge.repository.AppUserRepository;
 import com.globo.challenge.services.AppUserService;
+import com.globo.challenge.models.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,9 +21,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/api/user/{username}/status", method = RequestMethod.PUT)
-    public boolean setUserStatus(@PathVariable("username") String username,
+    public String setUserStatus(@PathVariable("username") String username,
                                      @RequestParam("status") String status) {
+        appUserService.setUserStatus(username, status);
 
-        return appUserService.setUserStatus(username, status);
+        return "Done";
     }
 }
