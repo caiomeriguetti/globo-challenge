@@ -47,7 +47,7 @@ after cd into deploy dir:
 
 # 10k connections test
 
-Being inside 10k dir, run:
+Run the app, cd into 10k dir and run:
 
 ``` python 10k.py ```
 
