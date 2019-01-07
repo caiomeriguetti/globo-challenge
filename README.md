@@ -29,6 +29,11 @@ To build api docker image:
 
 ```./test```
 
+### Basic Auth credentials
+
+caio
+1234
+
 ### Set status of user in redis
 
 ```curl --insecure -XPUT -H "Authorization: Basic Y2FpbzoxMjM0" https://localhost:9443/api/user/caio/status -d "status=XXXX"```

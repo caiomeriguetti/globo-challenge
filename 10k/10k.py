@@ -16,7 +16,8 @@ def opensock():
 
     print "connecting"
 
-    s.connect(("localhost", 9443))
+    #s.connect(("localhost", 9443))
+    #s.connect(("34.196.85.137", 9443))
 
     print "connected"
 
