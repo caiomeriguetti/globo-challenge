@@ -1,4 +1,4 @@
-- name: copy redis run configs
+- name: copy mongo run configs
   remote_user: centos
   become: yes
   become_method: sudo
