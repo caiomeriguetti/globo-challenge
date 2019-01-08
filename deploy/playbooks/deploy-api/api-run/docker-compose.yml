@@ -8,4 +8,4 @@ services:
       - .env
     ports:
       - 9443:8443
-    command: ["java", "-Xms5G", "-Xmx5G", "-jar", "/run/server.jar"]
+    command: ["java", "-Xms1G", "-Xmx1G", "-jar", "/run/server.jar"]
