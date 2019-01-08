@@ -15,6 +15,19 @@ public class UserController {
     @Autowired
     AppUserService appUserService;
 
+    @RequestMapping(value = "/public/ping", method = RequestMethod.GET)
+    public DeferredResult<String> getUserByUsername() {
+
+        DeferredResult<String> result = new DeferredResult<>(2000l);
+
+        ForkJoinPool.commonPool().submit(() -> {
+
+            result.setResult("Pong");
+        });
+
+        return result;
+    }
+
     @RequestMapping(value = "/api/user/{username}", method = RequestMethod.GET)
     public DeferredResult<AppUser> getUserByUsername(@PathVariable("username") String username) {
 
