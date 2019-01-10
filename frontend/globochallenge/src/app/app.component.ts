@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild, ElementRef} from '@angular/core';
 import { UserService } from './user.service'
 
 @Component({
@@ -11,14 +11,10 @@ export class AppComponent {
 
   @ViewChild('searchInput') searchInput: ElementRef;
 
-  userService:UserService
-
   constructor(private userService: UserService) {
-    this.userService = userService;
   }
 
   onKeydown(event) {
-    console.log(event.target.value);
     var x;
     this.userService.getUsers()
      .subscribe((data) => x = data);
