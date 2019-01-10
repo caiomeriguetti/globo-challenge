@@ -8,6 +8,20 @@
 
 # Local environment
 
+## FrontEnd
+
+### compile frontend js files
+
+cd into frontend and then:
+
+```./compile-js```
+
+After js compilation, being in the project root run:
+
+``` ./build-docker-image-front ```
+
+## Backend
+
 ### build app jar
 
 To build application jar:
@@ -20,6 +34,7 @@ To build api docker image:
 
 ```./build-docker-image```
 
+## Put everything up
 
 ### run the app
 
