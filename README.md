@@ -59,6 +59,12 @@ caio
 
 # Deploy
 
+## Frontend
+
+TODO: Frontend deploy
+
+## Backend
+
 ### Install api on a ssh-able host
 
 after cd into deploy dir:
