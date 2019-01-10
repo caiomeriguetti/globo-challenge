@@ -1,0 +1,15 @@
+server {
+	listen 80 default_server;
+
+	root /src;
+	index index.html index.htm index.nginx-debian.html;
+
+    location /api {
+        proxy_pass https://api:8443/api;
+    }
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+}

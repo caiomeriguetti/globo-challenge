@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  globochallenge-front-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile-builder
+    entrypoint: "src/entrypoint-builder.sh"
+    volumes:
+      - ./:/src
+      - ./npm-cache:/root/.npm
+
+

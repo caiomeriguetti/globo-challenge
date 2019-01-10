@@ -13,6 +13,15 @@ services:
     ports:
       - 9443:8443
 
+  front:
+    image: 541866003555.dkr.ecr.us-east-1.amazonaws.com/globo-challenge/frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    entrypoint: ["nginx", "-g", "daemon off;"]
+    ports:
+      - 9080:80
+
   db:
     image: mongo
     ports:
