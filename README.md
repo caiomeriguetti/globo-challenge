@@ -82,14 +82,3 @@ after cd into deploy dir:
 after cd into deploy dir:
 
 ``` ansible-playbook install-redis/install-redis.yml --limit redis-servers```
-
-
-# 10k connections test
-
-Run the app, cd into 10k dir and run:
-
-``` python 10k.py ```
-
-Then, check the number of ESTABLISHED connections:
-
-``` sudo netstat -alntp | grep 8443 |wc -l ```
