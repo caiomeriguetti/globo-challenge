@@ -7,8 +7,9 @@ import { UserService } from './user.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'globochallenge';
-  currentResult = null;
+  currentSubscription = null;
+  userFound = null;
+  userData = null;
 
   @ViewChild('searchInput') searchInput: ElementRef;
 
@@ -16,11 +17,16 @@ export class AppComponent {
   }
 
   renderData(data) {
-    console.log(data);
+    this.userData = data;
+    this.userFound = true;
   }
 
   renderError(error) {
-    console.log("ERROR");
+    switch(error.status) {
+      case 404:
+        this.userFound = false;
+      break;
+    }
   }
 
   onKeydown(event) {
@@ -29,12 +35,12 @@ export class AppComponent {
 
     if (event.key === "Enter") {
 
-      if (this.currentResult) {
-        this.currentResult.unsubscribe();
+      if (this.currentSubscription) {
+        this.currentSubscription.unsubscribe();
       }
 
-      this.currentResult = this.userService.getUsers(event.target.value);
-      this.currentResult.subscribe(
+      this.currentSubscription = this.userService.getUsers(event.target.value)
+      .subscribe(
         data => self.renderData(data),
         error => self.renderError(error)
       );

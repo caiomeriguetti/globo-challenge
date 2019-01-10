@@ -17,12 +17,19 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div *ngIf="userFound" class="row">
     <div class="col-sm">
       <ul class="list-group">
-        <li class="list-group-item">Username: Caio</li>
-        <li class="list-group-item">Status: Aprovado</li>
+        <li class="list-group-item">Username: {{userData.username}}</li>
+        <li class="list-group-item">Status: {{userData.status}}</li>
       </ul>
+    </div>
+  </div>
+  <div *ngIf="userFound === false" class="row">
+    <div class="col-sm">
+      <div class="alert alert-warning" role="alert">
+        User not found
+      </div>
     </div>
   </div>
 </div>
