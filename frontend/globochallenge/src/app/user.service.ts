@@ -9,9 +9,9 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  getUsers() {
+  getUsers(name) {
 
-    return this.http.get("/api/user/caio", {
+    return this.http.get("/api/user/" + name, {
       "headers": {"Authorization": "Basic Y2FpbzoxMjM0"}
     });
   }

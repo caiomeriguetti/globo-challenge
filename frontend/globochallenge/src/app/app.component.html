@@ -1,12 +1,28 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
+      <br/>
+      <div class="alert alert-primary" role="alert">
+        Type the username of the user and press ENTER
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">@</span>
         </div>
         <input #searchInput (keyup)="onKeydown($event)" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <ul class="list-group">
+        <li class="list-group-item">Username: Caio</li>
+        <li class="list-group-item">Status: Aprovado</li>
+      </ul>
     </div>
   </div>
 </div>

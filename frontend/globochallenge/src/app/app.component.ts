@@ -8,17 +8,38 @@ import { UserService } from './user.service'
 })
 export class AppComponent {
   title = 'globochallenge';
+  currentResult = null;
 
   @ViewChild('searchInput') searchInput: ElementRef;
 
   constructor(private userService: UserService) {
   }
 
-  onKeydown(event) {
-    var x;
-    this.userService.getUsers()
-     .subscribe((data) => x = data);
+  renderData(data) {
+    console.log(data);
+  }
 
-    console.log(x);
+  renderError(error) {
+    console.log("ERROR");
+  }
+
+  onKeydown(event) {
+
+    var self = this;
+
+    if (event.key === "Enter") {
+
+      if (this.currentResult) {
+        this.currentResult.unsubscribe();
+      }
+
+      this.currentResult = this.userService.getUsers(event.target.value);
+      this.currentResult.subscribe(
+        data => self.renderData(data),
+        error => self.renderError(error)
+      );
+
+    }
+
   }
 }
