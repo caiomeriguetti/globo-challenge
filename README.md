@@ -87,8 +87,8 @@ after cd into deploy dir:
 
 I did some load tests using AWS EC2 instances with the following profiles:
 
-Api Server - c4.2xlarge - 8 Cores - 15GB RAM - Price 0,398 USD/hour
-Apache Benchmark Server - c5.4xlarge - 16 Cores - 31GB RAM
+- Api Server - c4.2xlarge - 8 Cores - 15GB RAM - Price 0,398 USD/hour
+- Apache Benchmark Server - c5.4xlarge - 16 Cores - 31GB RAM
 
 And i got the following results:
 
